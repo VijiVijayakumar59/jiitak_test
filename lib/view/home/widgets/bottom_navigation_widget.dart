@@ -1,7 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:jiitaktest/view/detailed_screen/detailed_screen.dart';
+import 'package:jiitaktest/utilities/colors/colors.dart';
 import 'package:jiitaktest/view/home/home_screen.dart';
 import 'package:jiitaktest/view/search/search_screen.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
@@ -34,14 +34,14 @@ class BottomNavBar extends StatelessWidget {
           item: ItemConfig(
             icon: const Icon(
               CupertinoIcons.qrcode_viewfinder,
-              color: Colors.white,
+              color: whiteColor,
             ),
             title: "Scan",
             inactiveBackgroundColor: const Color.fromARGB(255, 244, 197, 67),
           ),
         ),
         PersistentTabConfig(
-          screen: const DetailedScreen(),
+          screen: const HomeScreen(),
           item: ItemConfig(
             icon: const Icon(
               CupertinoIcons.chat_bubble_text,

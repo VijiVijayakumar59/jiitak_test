@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jiitaktest/utilities/colors/colors.dart';
 import 'package:jiitaktest/utilities/constant_size/constant_height.dart';
+import 'package:jiitaktest/view/detailed_screen/detailed_screen.dart';
 import 'package:jiitaktest/view/detailed_screen/widgets/text_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -70,38 +71,34 @@ class HomeScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.all(18.0),
-                child: GridView.builder(
+                child: GridView.count(
                   shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  itemCount: 7,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 7,
-                  ),
-                  itemBuilder: (context, index) {
+                  crossAxisCount: 7,
+                  children: List.generate(7, (index) {
                     return Padding(
                       padding: const EdgeInsets.all(2.0),
                       child: Container(
-                        color: const Color.fromARGB(
-                          255,
-                          255,
-                          203,
-                          105,
-                        ),
+                        height: Get.height * 0.05,
+                        width: Get.width * 0.1,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 254, 180, 43),
+                            borderRadius: BorderRadius.circular(10)),
                         child: Center(
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
                                 days[index],
                                 style: const TextStyle(
                                   fontSize: 16.0,
-                                  color: Colors.white,
+                                  color: whiteColor,
                                 ),
                               ),
                               Text(
                                 (index + 1).toString(),
                                 style: const TextStyle(
                                   fontSize: 20.0,
-                                  color: Colors.white,
+                                  color: whiteColor,
                                 ),
                               ),
                             ],
@@ -109,7 +106,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     );
-                  },
+                  }),
                 ),
               ),
               Padding(
@@ -267,7 +264,11 @@ class HomeScreen extends StatelessWidget {
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: whiteColor,
-          onPressed: () {},
+          onPressed: () {
+            Get.to(
+              () => const DetailedScreen(),
+            );
+          },
           child: const Icon(
             Icons.location_on_outlined,
             size: 30,

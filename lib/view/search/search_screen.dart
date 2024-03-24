@@ -18,7 +18,7 @@ class SearchScreen extends StatelessWidget {
           },
           icon: const Icon(
             Icons.arrow_back_ios_new,
-            color: Colors.white,
+            color: whiteColor,
           ),
         ),
         title: const Text(

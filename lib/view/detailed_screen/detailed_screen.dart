@@ -697,8 +697,6 @@ class _DetailedScreenState extends State<DetailedScreen> {
                   ),
                 ),
               ),
-              //
-              const KHeight(size: 0.1),
             ],
           ),
         ),
